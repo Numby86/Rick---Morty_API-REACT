@@ -18,8 +18,8 @@ function App() {
   return (
     <div className="App">
     <h1>Rick & Morty API</h1>
-    {/* <AllCharacters all={allCharacters}/> */}
-    {/* <CardCharacter allCharacters={allCharacters}/> */}
+    <AllCharacters all={allCharacters}/>
+    <CardCharacter allCharacters={allCharacters}/>
     <Form />
     </div>
   );

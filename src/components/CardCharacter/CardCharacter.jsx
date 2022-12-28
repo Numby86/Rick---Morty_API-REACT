@@ -6,7 +6,7 @@ function CardCharacter({ allCharacters }) {
     <>
       <div className="card">
         {allCharacters.map((item) => {
-          if (item.id === 15) {
+          if (item.id === 20) {
             return (
               <div key={JSON.stringify(item)}>
                 <img src={item.image} alt="imagen personaje" />
