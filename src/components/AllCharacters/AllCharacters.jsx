@@ -1,15 +1,16 @@
+import React from "react";
 import Character from "../Character/Character.jsx";
 
 function AllCharacters({ all }) {
-    const allCharacters = all.map((character, index) => {
+    const listCharacters = all.map((character, index) => {
         return <Character character={character} key={index}/>
     });
     return (
         <div>
             <ul className="all">
-                {allCharacters}
+                {listCharacters}
             </ul>
-            <button>NEXT</button>
+            <button className="button" >NEXT</button>
         </div>
     )
 }

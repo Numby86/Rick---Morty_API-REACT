@@ -1,18 +1,18 @@
 import React from "react";
-//import CardCharacter from "../CardCharacter/CardCharacter";
+import { Link } from "react-router-dom";
 import "./Character.scss";
 
 function Character({ character }) {
 
-  // const cardCharacter = () => {
-  //   return <CardCharacter />
-  // }
+
 
   return (
     <li className="personaje">
-      <h2>
-        {character.id} - {character.name}
-      </h2>
+      <Link className="links" to={`/card/${character.id}`} >
+        <h2>
+          {character.id} - {character.name}
+        </h2>
+      </Link>
     </li>
   );
 }
