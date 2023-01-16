@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Character.scss";
 
 function Character({ character }) {
@@ -7,12 +6,14 @@ function Character({ character }) {
 
 
   return (
-    <li className="personaje">
-      <Link className="links" to={`/card/${character.id}`} >
-        <h2>
-          {character.id} - {character.name}
-        </h2>
-      </Link>
+    <li className="list">
+        <div className="characterDiv">
+        <div>
+          <img  src={character.image} alt='minicardCharacter'/>
+          <p>{character.id} - {character.name}</p>
+          <p className={character.status}>{character.status}</p>
+        </div>
+        </div>
     </li>
   );
 }

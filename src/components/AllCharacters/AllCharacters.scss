@@ -1,8 +1,3 @@
-.all{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .personaje{
     list-style: none;
     background-color: aqua;
@@ -29,4 +24,19 @@
     height: 50px;
     padding: 8px;
     font-weight: bold;
+    
+}
+.none{
+    display: none;
+}
+.divButtons{
+    margin: auto;
+    width: calc(100% - 30%);
+    display: flex;
+    justify-content: space-around;
+    margin-left: 18%;
+}
+.links{
+    text-decoration: none;
+    color: black;
 }

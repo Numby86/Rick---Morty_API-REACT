@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Button from "../Button/Button";
 import "./CardCharacter.scss";
 
 function CardCharacter({ allCharacters }) {
@@ -21,7 +22,8 @@ function CardCharacter({ allCharacters }) {
                 <p>Location: {foundCharacter.location.name}</p>
       </div>
       <Link to='/list'>
-      <button className="button">BACK TO LIST</button></Link>
+      <Button texto={'BACK TO LIST'} />
+      </Link>
       
     </>
   );
