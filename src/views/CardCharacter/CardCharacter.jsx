@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import "./CardCharacter.scss";
 
 function CardCharacter({ allCharacters }) {

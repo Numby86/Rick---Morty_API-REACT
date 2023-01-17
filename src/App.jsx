@@ -1,17 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import callApi from "../services/callApi.js";
+import callApi from "./services/callApi.js";
 
-import "../styles/App.scss";
-import AllCharacters from "./AllCharacters/AllCharacters";
-import CardCharacter from "./CardCharacter/CardCharacter.jsx";
-import Gender from "./filters/Gender/Gender.jsx";
-import MiniCard from "./MiniCard/MiniCard.jsx";
-import Form from "./Formulario/Formulario.jsx";
-import ErrorMorty from "./ErrorMorty/ErrorMorty.jsx";
-import axios from "axios";
-
+import "./styles/App.scss";
+import Home from './views/HomeViews/Home.jsx';
+import AllCharacters from "./views/AllCharacters/AllCharacters";
+import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
+import Gender from "./views/Gender/Gender.jsx";
+import MiniCard from "./views/MiniCard/MiniCard.jsx";
+import Form from "./components/Formulario/Formulario.jsx";
+import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 
 function App() {
 
@@ -59,16 +58,17 @@ function App() {
         />
         <Route
           path="/card/:id"
-          element={<CardCharacter allCharacters={allCharacters} />}
+          element={<CardCharacter allCharacters={allCharacters}  />}
         />
 
         <Route path="/miniCard" element={ <>
         <Gender gender={gender} handleGender={handleGender} />
-        <MiniCard allCharacters={filterData} />
+        <MiniCard allCharacters={filterData} numPage={numPage} nextPage={nextPage} prevPage={prevPage} />
         </>
         } />
         <Route path="/form" element={<Form />} />
         <Route path="*" element={<ErrorMorty />} />
+        <Route path="/homeviews" element={<Home />} />
       </Routes>
     </div>
   );
