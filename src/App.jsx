@@ -9,7 +9,7 @@ import AllCharacters from "./views/AllCharacters/AllCharacters";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
-import Form from "./components/Formulario/Formulario.jsx";
+import Form from "./components/Formulario/Form.jsx";
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 
 function App() {
@@ -67,8 +67,8 @@ function App() {
         </>
         } />
         <Route path="/form" element={<Form />} />
-        <Route path="*" element={<ErrorMorty />} />
         <Route path="/homeviews" element={<Home />} />
+        <Route path="*" element={<ErrorMorty />} />
       </Routes>
     </div>
   );
