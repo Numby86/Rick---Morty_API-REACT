@@ -2,16 +2,18 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import callApi from "./services/callApi.js";
-
 import "./styles/App.scss";
+
 import Home from './views/HomeViews/Home.jsx';
-import AllCharacters from "./views/AllCharacters/AllCharacters";
+import AllCharacters from "./views/AllCharacters/AllCharacters.jsx";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
 import Form from "./components/Formulario/Form.jsx";
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 import HomeExtra from "./views/HomeViews/HomeExtra/HomeExtra.jsx";
+import Register from "./views/User/Register.jsx";
+import Login from "./views/User/Login.jsx";
 
 function App() {
 
@@ -48,7 +50,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<h1>Rick & Morty API</h1>} />
+        <Route path="/" element={<><h1>Rick & Morty API</h1> </>} />
         <Route
           path="/list"
           element={
@@ -67,6 +69,8 @@ function App() {
         <MiniCard allCharacters={filterData} numPage={numPage} nextPage={nextPage} prevPage={prevPage} />
         </>
         } />
+        <Route path="/register" element={<Register></Register>} />
+        <Route path="/login" element={<Login></Login>} />
         <Route path="/form" element={<Form />} />
         <Route path="/home" element={<HomeExtra />} />
         <Route path="/homeviews" element={<Home />} />
