@@ -9,7 +9,7 @@ import AllCharacters from "./views/AllCharacters/AllCharacters.jsx";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
-import Form from "./components/Formulario/Form.jsx";
+import Form from "./components/Form/Form.jsx";
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 import Register from "./views/User/Register.jsx";
 import Login from "./views/User/Login.jsx";

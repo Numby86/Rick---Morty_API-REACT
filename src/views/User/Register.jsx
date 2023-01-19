@@ -13,15 +13,17 @@ const Register = () => {
   const handleChangeUser = (ev) => {
     setNewUser({ ...newUser, [ev.target.id]: ev.target.value })
   }
-
   const handleCreate = (ev) => {
     ev.preventDefault();
     axios.post('https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/register', newUser)
     .then((res) => {
-      console.log(res);
+      console.log(res.data);
       if(res.data._id){
         return setMsj('Te registraste correctamente.');
-      }
+      } 
+    })
+    .catch((error) => {
+      return setMsj('Error al registrase. ');
     });
   }
 

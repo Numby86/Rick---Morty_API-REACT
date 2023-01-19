@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { getDataApi } from '../../actions/postsActions.jsx';
 import './Home.scss';
 
-const Home = ({ dispatch, posts }) => {
+const Home = ({ dispatch, posts, success }) => {
 
   useEffect(() => {
     dispatch(getDataApi());
-  }, []);
+  }, [dispatch]);
 
   const renderPosts = () => {
     return posts.map((post) => {
@@ -18,7 +18,6 @@ const Home = ({ dispatch, posts }) => {
       </div>;
     })
   }
-
 
   return (
     <div>

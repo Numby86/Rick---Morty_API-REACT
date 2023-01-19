@@ -18,10 +18,13 @@ const Login = (props) => {
     ev.preventDefault();
     axios.post('https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/login', userLogin)
     .then((res) => {
+      console.log(res);
       if(res.data._id){
-        console.log(res);
         return setMsj('Login correcto.');
       }
+    })
+    .catch((error) => {
+      return setMsj('Error de usuario. ');
     });
   }
 
