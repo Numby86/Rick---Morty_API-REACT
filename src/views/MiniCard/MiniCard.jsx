@@ -14,7 +14,7 @@ const MiniCard = ({ allCharacters, numPage, nextPage, prevPage }) => {
             </ul>
             <div className="divButtons">
       <button className={numPage > 1 ? 'button' : 'none'} onClick={prevPage}>
-      PREVIUS
+      PREVIOUS
     </button>
         <button className="button" onClick={nextPage}>
           NEXT

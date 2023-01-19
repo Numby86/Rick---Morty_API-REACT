@@ -20,7 +20,7 @@ function AllCharacters({ all, numPage, prevPage, nextPage }) {
       </ul>
       <div className="divButtons">
       <button className={numPage > 1 ? 'button' : 'none'} onClick={prevPage}>
-      PREVIUS
+      PREVIOUS
     </button>
         <button className="button" onClick={nextPage}>
           NEXT
