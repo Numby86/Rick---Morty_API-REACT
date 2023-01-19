@@ -9,7 +9,7 @@ import AllCharacters from "./views/AllCharacters/AllCharacters.jsx";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
-import Form from "./components/Formulario/Formulario.jsx";
+import Form from "./components/Formulario/Form.jsx";
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 import Register from "./views/User/Register.jsx";
 import Login from "./views/User/Login.jsx";
@@ -72,8 +72,8 @@ function App() {
         <Route path="/register" element={<Register></Register>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/form" element={<Form />} />
-        <Route path="*" element={<ErrorMorty />} />
         <Route path="/homeviews" element={<Home />} />
+        <Route path="*" element={<ErrorMorty />} />
       </Routes>
     </div>
   );
