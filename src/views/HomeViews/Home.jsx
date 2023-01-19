@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getDataApi } from '../../actions/postsActions.jsx';
+import NavBar from '../../components/NavBar/NavBar.jsx';
 import './Home.scss';
 
 const Home = ({ dispatch, posts }) => {
