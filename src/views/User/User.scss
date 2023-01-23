@@ -35,7 +35,16 @@
     color: white;
     text-decoration: none;
 }
+.refresh{
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
 .input{
     color: white;
     -webkit-text-stroke: 0.4px white;
+}
+.none{
+    display: none;
 }

@@ -2,42 +2,49 @@ import { useState } from 'react';
 import './User.scss';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import Loader from '../../components/Loader/Loader.jsx';
 
-const Login = (props) => {
+const Login = () => {
+
   const [userLogin, setuserLogin] = useState({
     email: '',
     password: '',
   });
   const [msj, setMsj] = useState('');
+  const [msjReg, setMsjReg] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleUser = (ev) => {
     setuserLogin({ ...userLogin, [ev.target.id]: ev.target.value });
   };
-
   const handleLogin = (ev) => {
     ev.preventDefault();
+    setLoading(true);
+    setMsjReg(true);
     axios.post('https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/login', userLogin)
     .then((res) => {
-      console.log(res);
       if(res.data._id){
-        return setMsj('Login correcto.');
+        setMsj('Login correcto.');
+        setLoading(false);
       }
     })
     .catch((error) => {
-      return setMsj('Error de usuario. ');
+      setMsj('Error de usuario. Intentelo de nuevo.');
+      setLoading(false);
     });
   }
-
   return (
     <>
-      <form className='user'>
+      <form className={msj === 'Login correcto.' ? 'none' : 'user'}>
         <label htmlFor="user">Usuario</label>
         <input className='input' type="text" id="email" onChange={handleUser} />
         <label htmlFor="password">Contraseña</label>
         <input className='input' type="password" id="password" onChange={handleUser} />
         <button className='butSubmit' onClick={handleLogin}>Login</button>
       </form>
-      <p className='user'>Si aun no eres usuario aqui puedes <Link to={'/register'} className='link'>REGISTRARTE</Link></p>
+      {loading === true ? <Loader></Loader> : null}
+      {msjReg === false ? <p className='user'>Aun no eres usuario?  <Link to={'/register'} className='link'>REGISTRATE</Link></p> : null}
+      {msj === 'Login correcto.' ? <Link className='user' to={'/posts'}>Ver post</Link> : null}
       <p className='user'>{msj}</p>
     </>
   );

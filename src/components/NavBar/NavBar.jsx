@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './NavBar.scss';
 
 const NavBar = () => {
   return (
@@ -27,7 +28,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link className="links" to={"/seach"}>
+          <Link className="links" to={"/search"}>
             <h2>
               BUSCADOR
             </h2>

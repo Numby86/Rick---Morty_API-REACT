@@ -2,9 +2,6 @@ import React from "react";
 import "./Character.scss";
 
 function Character({ character }) {
-
-
-
   return (
     <li className="list">
         <div className="characterDiv">

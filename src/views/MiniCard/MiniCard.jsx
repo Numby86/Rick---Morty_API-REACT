@@ -23,19 +23,5 @@ const MiniCard = ({ allCharacters, numPage, nextPage, prevPage }) => {
         </div>
     )
 }
-  
-
-
-//   return (
-//     <div>
-//       <ul className='miniCard'>
-//         {allCharacters.map((item, id) => (
-//           <li key={id}>{item.name}</li>
-//         ))}
-//       </ul>
-
-//     </div>
-//   )
-// }
 
 export default MiniCard

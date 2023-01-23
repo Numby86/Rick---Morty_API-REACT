@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ErrorMorty.scss';
+import Button from '../../components/Button/Button.jsx';
 
 const ErrorMorty = () => {
   return (
@@ -13,7 +14,7 @@ const ErrorMorty = () => {
 					<span>44</span>
 				</div>
 				<p>THE PAGE YOU ARE TRIYING TO SEARCH HAS BEEN MOVED TO ANOTHER UNIVERSE.</p>
-				<Link to='/'><button type="button">GET ME HOME</button></Link>
+				<Link to='/'><Button texto={'GET ME HOME'} /></Link>
 			</div>
 		</div>
     </div>

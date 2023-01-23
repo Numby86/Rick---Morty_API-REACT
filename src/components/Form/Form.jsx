@@ -13,7 +13,6 @@ const Form = (props) => {
 
   const submitForm = (ev) => {
     ev.preventDefault();
-    //guardar en base de datos
     setState(INITIAL_STATE);
   };
 

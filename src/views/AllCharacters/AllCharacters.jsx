@@ -10,7 +10,7 @@ function AllCharacters({ all, numPage, prevPage, nextPage }) {
       <ul>
         {all.map((item, id) => (
           <li className="personaje" key={id}>
-            <Link className="links" to={`/card/${item.id}`}>
+            <Link className="enlace" to={`/card/${item.id}`}>
               <h2>
                 {item.id} - {item.name}
               </h2>

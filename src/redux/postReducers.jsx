@@ -5,11 +5,13 @@ export const initialState = {
     succes: false
 };
 
-export default function postsReducer(state = initialState, action){
+export default function postsReducer(state = initialState, action) {
     switch (action.type) {
-        case actions.GET_POSTS:
-            return { ...state };
-        default:
-            return state;
+      case actions.GET_POSTS:
+        return { ...state, success: false };
+      case actions.GET_POSTS_SUCCESS:
+        return { posts: action.payload, success: true };
+      default:
+        return state;
     }
-}
+  }
