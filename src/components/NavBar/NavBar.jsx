@@ -1,35 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
-import Search from "../Search/Search";
 import imagelogo from "../../images/logo.png";
 
 const NavBar = () => {
   return (
-    <div>
-      <ul>
-        <li className="logo">
-          <Link className="links" to={"/home"}>
-            <img src={imagelogo} alt="logo" />
+    <div className="diNavBar">
+    <Link className="links" to={"/home"}>
+            <img className="imageLogo" src={imagelogo} alt="logo" />
           </Link>
-        </li>
-        <li>
+      <ul className="ulNavBar">
+        <li className="liNavBar">
           <Link className="links" to={"/login"}>
-            <h2>TU USUARIO</h2>
+            <h2 className="h2NavBar">TU USUARIO</h2>
           </Link>
         </li>
-        <li>
+        <li className="liNavBar">
           <Link className="links" to={"/list"}>
-            <h2>LISTADO</h2>
+            <h2 className="h2NavBar">LISTADO</h2>
           </Link>
         </li>
-        <li>
+        <li className="liNavBar">
           <Link className="links" to={"/miniCard"}>
-            <h2>CARDS</h2>
+            <h2 className="h2NavBar">CARDS</h2>
           </Link>
-        </li>
-        <li>
-          <Search />
         </li>
       </ul>
     </div>

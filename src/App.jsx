@@ -11,14 +11,11 @@ import AllCharacters from "./views/AllCharacters/AllCharacters.jsx";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
-<<<<<<< HEAD
-=======
-import Form from "./components/Form/Form.jsx";
->>>>>>> 70fae9a1a879ca383d73bb5155f4b5bfa2cf13f0
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
-import HomeExtra from "./views/HomeExtra/HomeExtra.jsx";
+import Home from "./views/Home/Home.jsx";
 import Register from "./views/User/Register.jsx";
 import Login from "./views/User/Login.jsx";
+import NavBar from "./components/NavBar/NavBar.jsx";
 
 function App() {
   // variable de estado para nuestros personajes
@@ -57,15 +54,9 @@ function App() {
 
   return (
     <div className="App">
+    <NavBar></NavBar>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <h1 className="rick">Rick & Morty API</h1>{" "}
-            </>
-          }
-        />
+      <Route path="/" element={<Home />} />
         <Route
           path="/list"
           element={
@@ -100,12 +91,7 @@ function App() {
         <Route path="/register" element={<Register></Register>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/form" element={<Form />} />
-        <Route path="/home" element={<HomeExtra />} />
-<<<<<<< HEAD
         <Route path="/posts" element={<Posts />} />
-=======
-        <Route path="/homeviews" element={<Home />} />
->>>>>>> 70fae9a1a879ca383d73bb5155f4b5bfa2cf13f0
         <Route path="*" element={<ErrorMorty />} />
       </Routes>
       <Footer></Footer>
