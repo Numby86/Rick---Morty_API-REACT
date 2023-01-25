@@ -11,6 +11,10 @@ import AllCharacters from "./views/AllCharacters/AllCharacters.jsx";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
+<<<<<<< HEAD
+=======
+import Form from "./components/Form/Form.jsx";
+>>>>>>> 70fae9a1a879ca383d73bb5155f4b5bfa2cf13f0
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 import HomeExtra from "./views/HomeExtra/HomeExtra.jsx";
 import Register from "./views/User/Register.jsx";
@@ -97,7 +101,11 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/form" element={<Form />} />
         <Route path="/home" element={<HomeExtra />} />
+<<<<<<< HEAD
         <Route path="/posts" element={<Posts />} />
+=======
+        <Route path="/homeviews" element={<Home />} />
+>>>>>>> 70fae9a1a879ca383d73bb5155f4b5bfa2cf13f0
         <Route path="*" element={<ErrorMorty />} />
       </Routes>
       <Footer></Footer>
