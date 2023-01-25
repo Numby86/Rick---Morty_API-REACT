@@ -1,75 +1,29 @@
-PREGUNTAS:
--conseguir recojer error en login y register.
--search: paginacion en search.
+Buenas, aqui os ponemos todas las funcionalidades de nuestra api, tb os dejamos comentarios por el codigo para q veais donde lo hace.
 
+COMPONENTES:
+-- Creamos un componente Button con la clase 'button q despues utilizamos en varias views, y le pasamos el texto por Props.
+-- Creamos un Footer que utilizamos en varias views con nuestros gitHub y un acceso a comentarios de nuestros usuarios que te manda a la pagina de login para que hagas el login y despues ya te envia a ver los posts.
+-- Creamos un Form con todos sus inputs controlados.
+-- Creamos un spinner personalizado que utilizamos en el login y en el register mientras carga la respuesta de la api.
+-- Creamos un navbar que es nuestro header para ir a todas la vistas de nuestra pagina, y tb le incluimos un buscador de personajes dentro.
 
-# Getting Started with Create React App
+SERVICES:
+-- Hacemos una llamada a la api de Rick & Morty, para despues utilizarla a traves de APP y cojer datos en diferentes views.
+-- Hacemos otra llamada a la api para crear un search y despues utilizarla en un buscador que te trae personaje por nombre.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ACTIONS Y REDUX:
+-- Hacemos una carpeta actions y redux en la que hacemos unos posts simulados como hicimos en el ejercicio de clase.
 
-## Available Scripts
+VIEWS:
+-- En nuestro componente APP creamos variables de estado y funciones que despues necesitamos en nuestras diferentes views o componentes y se las pasamos por props y creamos todas nuestras rutas.
+-- Creamos view AllCharacters que trae listado de personajes con su id y nombre, q si pinchas en uno te lleva a carta completa de ese personaje, y tb con una paginacion.
+-- Creamos view CardCharacter que es la carta completa con muchos datos del personaje del que hagas click desde nuestra lista, esta creado con el fondo de portal de la serie.
+-- Creamos view Character q es nuestro li de la view MiniCard que es en la que filtras por genero y aqui tb segun el estado del personaje sea vivo, muerto o unknow, le pinta ese dato en azul, rojo o gris.
+-- Creamos view Comments que nos trae post ficticios con redux que los incorporamos como si fueran comentarios de nuestros usuarios y que para verlos tienes que pasarte hacer login.
+-- Creamos view ErrorMorty que es una vista personalizada q se te muestra como error general cuando escribes mal la url, PROBARLO PARA VERLO QUE ESTA BASTANTE CHULO.
+-- Creamos view Gender que tiene un select en el que elijes por genero y te filtra las Minicard por chico, chica o todos.
+-- Creamos view Home que muestra nuestra pagina principal de inicio, desde donde puedes ir a todos los componentes de nuestra pagina.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-- Creamos view Minicard que es un ul que trae nuestro li Character, q filtras con un select por genero y en la carta te la pinta diferentes segun su status.
+-- Creamos view Register para que pueda registrarse cualquier usuario, que esta enlazada con nuestro backend q esta levantado en vercel, el formulario te manda mensaje personalizado si se hizo correctamente o si dio error, carga el componente Loader mientras carga la respuesta, y tb desaparece el formulario cuando ya no es necesario, tb tiene un button para actualizar la pagina si te has registrado mal.
+-- Creamos view Login para que pueda hacer login cualquier usuario, que esta enlazada con nuestro backend q esta levantado en vercel, el formulario te manda mensaje personalizado si se hizo correctamente o si dio error, carga el componente Loader mientras carga la respuesta, y tb desaparece el formulario cuando ya no es necesario, tb tiene un Link en el que te puedes registrar si aun no lo estas y otro que te manda a nuestros Post ficticios si te hiciste bien el Login.

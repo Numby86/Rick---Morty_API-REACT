@@ -13,18 +13,34 @@ const Register = () => {
     surname: "",
     telefono: ""
   });
+
+  // variable de estado para mandar el msj que queramos
+
   const [msj, setMsj] = useState("");
+
+  // variable de estado para poner y quitar el spinner del Loader
+
   const [loading, setLoading] = useState(false);
+
+  // funcion para recojer datos de nuestros usuarios
 
   const handleChangeUser = (ev) => {
     setNewUser({ ...newUser, [ev.target.id]: ev.target.value });
   };
+
+  // button actualizar pagina
+
   const refreshPage = ()=>{
     window.location.reload();
  }
 
+ // funcion para hacer el registro en nuestra api, con axios
+
   const handleCreate = (ev) => {
     ev.preventDefault();
+
+    // carga el Loader
+
     setLoading(true);
     axios
       .post(
@@ -34,11 +50,17 @@ const Register = () => {
       .then((res) => {
         console.log(res.data);
         if (res.data._id) {
+
+          // manda msj y desaparece loader
+
           setMsj("Te registraste correctamente.");
           setLoading(false);
         }
       })
       .catch(() => {
+
+        // manda msj y desaparece loader
+
         setMsj("Se ha producido un error al registrarte. ");
         setLoading(false);
       });
@@ -46,6 +68,9 @@ const Register = () => {
 
   return (
     <>
+
+      {/* condicion para que aparezca o no el formulario */}
+
       <form className={msj === "Te registraste correctamente." ? 'none' : 'user'}>
         <label htmlFor="name">Nombre</label>
         <input
@@ -86,6 +111,9 @@ const Register = () => {
           Registrarse
         </button>
       </form>
+
+      {/* ponemos condiciones para que aparezca los msj y el loader */}
+
       {loading === true ? <Loader></Loader> : null}
       <p className="user">{msj}</p>
       <button onClick={refreshPage} className={msj === "Se ha producido un error al registrarte. " ? 'refresh' : 'none'} to={'/register'}>Intentalo de nuevo</button>

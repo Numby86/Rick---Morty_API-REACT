@@ -12,6 +12,9 @@ function CardCharacter({ allCharacters }) {
 
   return (
     <>
+
+    {/* le ponemos la condicion de que si aun no hay datos de la pagina nos muestre nuestra view de ErrorMorty */}
+
     {foundCharacter ? <>
       <div className="card">
                 <img src={foundCharacter.image} alt="imagen personaje" />
@@ -22,6 +25,9 @@ function CardCharacter({ allCharacters }) {
                 <p>Location: {foundCharacter.location.name}</p>
       </div>
       <Link to='/list'>
+
+      {/* aqui utilizamos tb nuestro componente Button para volver a la lista */}
+      
       <Button texto={'BACK TO LIST'} />
       </Link>
     </>  : <ErrorMorty></ErrorMorty>}

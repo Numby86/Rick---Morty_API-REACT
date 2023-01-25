@@ -19,6 +19,9 @@ function AllCharacters({ all, numPage, prevPage, nextPage }) {
         ))}
       </ul>
       <div className="divButtons">
+
+      {/* le pasamos display none al button de previous para que cuando inicies o vuelvas a la pagina 1 no aparezca */}
+      
       <button className={numPage > 1 ? 'button' : 'none'} onClick={prevPage}>
       PREVIOUS
     </button>
