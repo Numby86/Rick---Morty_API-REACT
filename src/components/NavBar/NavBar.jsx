@@ -7,12 +7,10 @@ import imagelogo from "../../images/logo.png";
 const NavBar = () => {
   return (
     <div>
+      <Link className="links" to={"/home"}>
+        <img src={imagelogo} alt="logo" />
+      </Link>
       <ul>
-        <li className="logo">
-          <Link className="links" to={"/home"}>
-            <img src={imagelogo} alt="logo" />
-          </Link>
-        </li>
         <li>
           <Link className="links" to={"/login"}>
             <h2>TU USUARIO</h2>
@@ -27,9 +25,6 @@ const NavBar = () => {
           <Link className="links" to={"/miniCard"}>
             <h2>CARDS</h2>
           </Link>
-        </li>
-        <li>
-          <Search />
         </li>
       </ul>
     </div>
