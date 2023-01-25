@@ -9,7 +9,7 @@ import AllCharacters from "./views/AllCharacters/AllCharacters.jsx";
 import CardCharacter from "./views/CardCharacter/CardCharacter.jsx";
 import Gender from "./views/Gender/Gender.jsx";
 import MiniCard from "./views/MiniCard/MiniCard.jsx";
-import Form from "./components/Formulario/Form.jsx";
+import Form from "./components/Form/Form.jsx";
 import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 import HomeExtra from "./views/HomeViews/HomeExtra/HomeExtra.jsx";
 import Register from "./views/User/Register.jsx";
@@ -74,7 +74,6 @@ function App() {
         <Route path="/form" element={<Form />} />
         <Route path="/home" element={<HomeExtra />} />
         <Route path="/homeviews" element={<Home />} />
-        {/* <Route path="/search" element={<Search />} /> */}
         <Route path="*" element={<ErrorMorty />} />
       </Routes>
     </div>
