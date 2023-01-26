@@ -7,7 +7,6 @@ import "./CardCharacter.scss";
 function CardCharacter({ allCharacters }) {
 
   const params = useParams();
-
   const foundCharacter = allCharacters.find((element) => element.id === parseInt(params.id));
 
   return (

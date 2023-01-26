@@ -1,16 +1,12 @@
 import React from "react";
 import "./AllCharacters.scss";
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
 
 function AllCharacters({ all, numPage, prevPage, nextPage }) {
 
   
   return (
     <div>
-    <div className="header">
-    <NavBar  />
-    </div>
       <ul>
         {all.map((item, id) => (
           <li className="personaje" key={id}>
