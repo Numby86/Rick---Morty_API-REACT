@@ -40,6 +40,7 @@ function App() {
       setAllCharacters(res);
     });
   }, [numPage]);
+
   // funciones para filtrar personajes por genero
   const handleGender = (value) => {
     setGender(value);
