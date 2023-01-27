@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import searchApi from "../../services/searchApi";
 import "./Search.scss";
 
@@ -53,6 +54,8 @@ const Search = () => {
 
   //Retornamos el buscador, que tendrá un onChange cada vez que el valor del nombre cambie. Debajo, un div en el que, si el array está vacío, nos arroje "No hay resultados" y, si no, que haga un .map de los resultados con el nombre de cada personaje buscado. Debajo, los botones de "previous" y "next".
   return (
+    <span>
+      <h2 className="h2Search">BUSCA TU PERSONAJE</h2>
     <div className="buscador">
       <input
         onChange={(ev) => {
@@ -61,7 +64,9 @@ const Search = () => {
       />
       <div className="resultados">
         {results.map((result) => (
-          <p key={result.name}>{result.name}</p>
+          <Link key={result.name} to = {`/card/${result.id}`}>
+          {result.name}
+          </Link>
         ))}
       </div>
       <div className="divButtons">
@@ -77,6 +82,7 @@ const Search = () => {
         </button>
       </div>
     </div>
+    </span>
   );
 };
 

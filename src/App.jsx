@@ -15,7 +15,7 @@ import ErrorMorty from "./views/ErrorMorty/ErrorMorty.jsx";
 import Home from "./views/Home/Home.jsx";
 import Register from "./views/User/Register.jsx";
 import Login from "./views/User/Login.jsx";
-import NavBar from "./components/NavBar/NavBar.jsx";
+import Header from "./components/Header/Header.jsx";
 
 function App() {
   // variable de estado para nuestros personajes
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-    <NavBar></NavBar>
+    <Header></Header>
       <Routes>
       <Route path="/" element={<Home />} />
         <Route

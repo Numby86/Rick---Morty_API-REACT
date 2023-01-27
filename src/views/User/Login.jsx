@@ -70,8 +70,8 @@ const Login = () => {
 
       {/* mensaje de login correcto y un link para ver Posts de nuestros user */}
       
-      {msj === 'Login correcto.' ? <Link className='user' to={'/posts'}>Ver post</Link> : null}
-      <p className='user'>{msj}</p>
+      {msj === 'Login correcto.' ? <Link className='git' to={'/posts'}>Ver posts</Link> : null}
+      <p className='link'>{msj}</p>
     </>
   );
 };
