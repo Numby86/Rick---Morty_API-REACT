@@ -55,13 +55,13 @@ function App() {
 
   return (
     <div className="App">
-    <Header></Header>
       <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<><Header /><Home /><Footer /></>} />
         <Route
           path="/list"
           element={
             <>
+              <Header />
               <AllCharacters
                 all={allCharacters}
                 numPage={numPage}
@@ -79,6 +79,7 @@ function App() {
           path="/minicard"
           element={
             <>
+              <Header />
               <Gender gender={gender} handleGender={handleGender} />
               <MiniCard
                 allCharacters={filterData}
@@ -89,13 +90,12 @@ function App() {
             </>
           }
         />
-        <Route path="/register" element={<Register></Register>} />
-        <Route path="/login" element={<Login></Login>} />
-        <Route path="/form" element={<Form />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/register" element={<><Header /><Register></Register></>} />
+        <Route path="/login" element={<><Header /><Login></Login></>} />
+        <Route path="/form" element={<><Header /><Form /></>} />
+        <Route path="/posts" element={<><Header /><Posts /></>} />
         <Route path="*" element={<ErrorMorty />} />
       </Routes>
-      <Footer></Footer>
     </div>
   );
 }
